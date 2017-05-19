@@ -1,0 +1,268 @@
+h1 {
+  font-size: 90px;
+  margin: 0px 150px 120px 540px; /*top right bottom left*/
+}
+
+.h1-2{
+  font-size: 90px;
+  margin: 30px 150px 20px 540px; /*top right bottom left*/
+}
+
+.h1-3{
+  font-size: 70px;
+  margin: 30px 0px 30px 450px; /*top right bottom left*/
+}
+
+.div1{
+  margin: 10px 150px 20px 530px; /*top right bottom left*/
+}
+
+.div2{
+  margin: 0px 150px 20px 400px; /*top right bottom left*/
+  border-style: solid;
+  border-width: 3px;
+  border-color: lightgray;
+  height: 500px;
+  width: 750px;
+}
+
+.div3{
+  margin: -120px 150px 20px 500px; /*top right bottom left*/
+}
+
+.div4{
+  margin: 100px 150px 20px -100px; /*top right bottom left*/
+}
+
+.div5{
+  margin: 20px 150px 20px -160px; /*top right bottom left*/
+  border-style: dashed;
+  border-width: 3px;
+  border-color: lightgreen;
+  height: 500px;
+  width: 750px;
+}
+
+ .button1 {
+    background-color: #BDBDBD;
+    color: black;
+    height: 60px;
+    width: 300px;
+    border-radius: 12px;
+}
+
+.button2{
+  background-color: #FF3C3C;
+  color: white;
+  height: 60px;
+  width: 130px;
+}
+
+.button3{
+  background-color: lightgray;
+  border-radius: 100px;
+  height: 70px;
+  width: 70px;
+}
+
+.button4{
+  background-color: transparent;
+  border: 0px;
+}
+
+.button5{
+  background: #BDBDBD;
+  color: black;
+  height: 150px;
+  width: 470px;
+  margin-top: 170px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.button1 td img{
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+}
+
+.button1 table td, tr{
+  height: 10px;
+}
+
+.button2 td img{
+  height: 40px;
+  width: 40px;
+  margin-left: 0px;
+}
+
+.button3 img{
+  height: 40px;
+  width: 40px;
+}
+
+button td{
+  text-align: center;
+  font-size: 20px;
+  height: 10px;
+}
+
+.button5 img{
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+}
+
+#sidebar{
+  border: 1px solid black;
+  width: 300px;
+  height: 90%;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.sideimg{
+  margin: 30px 20px 20px 50px; /*top right bottom left*/
+  height: 100px;
+  width: 200px;
+}
+
+.sidetable{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sidetable tr td{
+  border: 1px solid black;
+}
+
+li a,a:visited{
+  color: black;
+  text-decoration: none;
+}
+
+ul{
+  margin-left: 0px;
+  padding: 0px;
+}
+
+ul li{
+  list-style: none;
+  width: 300px;
+}
+
+#sidebar ul li a{
+  color: black;
+  display: block;
+  padding: 25px;
+  margin-left: 50px;
+  font-weight: bold;
+}
+
+#sidebar ul li:hover{
+  background: lightgray;
+  transition: linear all 0.40s;
+  margin-left: 10px;
+}
+
+footer {
+  display: block;
+  margin: 50px 150px 20px 840px; /*top right bottom left*/
+}
+
+.nav{
+  padding: 10px;
+  font-size: 20px;
+}
+
+.nav li{
+  padding: 10px;
+  width: 95%;
+}
+
+.nav li ul{
+  padding: 10px;
+}
+
+.nav li a:hover{
+  background: lightgray;
+}
+
+.nav li ul,p{
+  display: none;
+}
+
+.nav li:hover ul{
+  display: block;
+}
+
+.nav li:hover p{
+  display: block;
+}
+
+.flechas:after{
+  content: '\203A';
+  float: left;
+  margin-right: 10px;
+}
+
+.nav li:hover .flechas:after{
+  content: '\203A';
+  float: left;
+  margin-right: 10px;
+  transform: rotate(90deg);
+}
+
+.bigtable{
+  margin-left: -170px;
+  font-size: 20px;
+  font-weight: normal;
+  width: 920px;
+  text-align: justify;
+}
+
+.bigtable th{
+  font-size: 40px;
+  height: 50px;
+  width: 800px;
+  text-align: center;
+}
+
+.scroll{
+  margin-top: -50px;
+  border: 1px solid black;
+  overflow: scroll;
+  height: 400px;
+}
+
+.btdiv{
+  margin-top: 20px;
+  margin-left: 20px
+}
+
+.smalltable td, th{
+  height: 60px;
+}
+
+.extratable td{
+  height: 10px;
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.extratable img{
+  height: 80px;
+  width: 80px;
+}
+
+.inputfile{
+  background: #BDBDBD;
+  color: black;
+  height: 150px;
+  width: 470px;
+  margin-top: 170px;
+  font-size: 25px;
+  text-align: center;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Subir un Archivo</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<div id="sidebar">
+		<img src="img/logo.jpg" class="sideimg">
+	<ul>
+	<li style="border-top: 1px solid black";><a href="web.html">Inicio</a></li>
+	<li><a href="ayuda.html">Ayuda</a></li>
+	<li><a href="about.html">Acerca de</a></li>
+	<li><a href="imprimir.html">Imprimir</a></li>
+	<li><a href="archivos.html">Mis Arhivos</a></li>
+	</ul>
+	</div>
+
+
+	<h1 class="h1-3">Subir un Archivo<h1>
+		<div class="div3">
+	<button class="button3"><img src="img/help2.png"></button>
+	</div>
+
+	<div class="div5">
+			<form action="php/upload.php" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+				<input type="file" name="file">
+					<input type="submit" name="submit" value="Subir">
+		</form>
+	</div>
+
+</body>
+</html>
