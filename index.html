@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+</head>
+
+<style>
+
+form {
+	padding: 15px 32px;
+	text-decoration: none;
+	display: block;
+	font-size: 30px;
+}
+
+.input1{
+	height: 30px;
+	width: 350px;
+	font-size: 20px;
+	justify-content: space-around;
+}
+
+.input2{
+	height: 40px;
+	width: 150px;
+	font-size: 20px;
+}
+
+table, td {
+	height: 70px;
+	width: 45%;
+	margin: 10px 100px 100px 350px;
+}
+
+
+.logo{
+	margin: 70px 150px 0px 500px; /*top right bottom left*/
+}
+
+</style>
+
+<body>
+		<img src="img/logo.jpg" width="350" height="200" class="logo">
+		<form action="php/log.php" method="post">
+			  <table>
+			  <tr>
+			  	<td align="left">Usuario:</td>
+					<td>&#160</td>
+					<td align="center"><input type="text" name="login" class="input1"></td>
+			  </tr>
+			  <tr>
+			  	<td align="left">Contrasena:</td>
+					<td>&#160</td>
+					<td align="center"><input type="password" name="clave" class="input1"></td>
+			  </tr>
+			  <tr>
+					<td>&#160</td>
+			    <td colspan="2" align="center"><input type="submit" name="submit" value="IR" class="input2"></td>
+			  </tr>
+			</table>
+			</from>
+</body>
+</html>
