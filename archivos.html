@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<title>Mis Archivos</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-	<style>
+  <h1>Mis archivos</h1>
+<style>
 h1 {text-align:center;}
 body {font-family: "Lato", sans-serif;}
+
 /* Style the tab */
 div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
-    margin: 10px 150px 20px 450px; /*top right bottom left*/
+    margin: 0px 750px 0px 700px;
 }
 /* Style the buttons inside the tab */
 div.tab button {
@@ -26,37 +24,31 @@ div.tab button {
     transition: 0.3s;
     font-size: 17px;
 }
+
 /* Change background color of buttons on hover */
 div.tab button:hover {
     background-color: #ddd;
 }
+
 /* Create an active/current tablink class */
 div.tab button.active {
     background-color: #ccc;
 }
+
 /* Style the tab content */
 .tabcontent {
     display: none;
+    margin: 0px 400px 0px 400px;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: 1px solid #ccc;
-		margin: 10px 150px 20px 450px;
+    height: 50em
 }
 </style>
 </head>
-
 <body>
 
-<div id="sidebar">
-	<img src="img/logo.jpg" class="sideimg">
-<ul>
-<li style="border-top: 1px solid black";><a href="web.html">Inicio</a></li>
-<li><a href="ayuda.html">Ayuda</a></li>
-<li><a href="about.html">Acerca de</a></li>
-<li><a href="imprimir.html">Imprimir</a></li>
-<li><a href="archivos.html">Mis Arhivos</a></li>
-</ul>
-</div>
+
 
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Subir')">Subir</button>
@@ -89,7 +81,16 @@ div.tab button.active {
   <h3>Editar</h3>
   <p>Cojes un archivo... y lo editas</p>
 </div>
-
+<div id="sidebar">
+	<img src="img/logo.jpg" class="sideimg">
+<ul>
+<li style="border-top: 1px solid black";><a href="web.html">Inicio</a></li>
+<li><a href="ayuda.html">Ayuda</a></li>
+<li><a href="about.html">Acerca de</a></li>
+<li><a href="imprimir.html">Imprimir</a></li>
+<li><a href="archivos.html">Mis Arhivos</a></li>
+</ul>
+</div>
 <script>
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
