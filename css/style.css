@@ -266,3 +266,25 @@ footer {
   font-size: 25px;
   text-align: center;
 }
+
+
+/*FERNANDO!*/
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../img/search.png');
+    background-position: left;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+/*FERNANDO!*/
+input[type=text]:focus {
+    width: 100%;
+}
