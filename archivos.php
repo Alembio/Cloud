@@ -1,3 +1,23 @@
+<?php
+session_start();
+require_once('php/mysqli_connect.php');
+
+$idusuario = $_SESSION["idusuario"];
+
+$sql = "SELECT * FROM Archivos where Usuario_idusuario = $idusuario";
+$result = $dbc->query($sql);
+
+$arreglo = array();
+$i = 0;
+
+
+while($row = $result->fetch_array(MYSQLI_ASSOC)){
+$arreglo[$i] = $row["nombre"];
+$i ++;
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -72,19 +92,22 @@ div.tab button.active {
   <button class="tablinks" onclick="openCity(event, 'Subir')">Subir</button>
   <button class="tablinks" onclick="openCity(event, 'Seleccionar')">Seleccionar</button>
   <button class="tablinks" onclick="openCity(event, 'Nuevo')">Nuevo</button>
-  <a href = "ayuda.html" >
 		<button class="tablinks" onclick="openCity(event, 'Editar')">Editar</button>
-</a><!--cambiar por un boton aburrido que mande a otro coso-->
+
 
 </div>
 
 <div id="Subir" class="tabcontent">
   <h3>Subir</h3>
-  <h4>Aca ponemos la mierda que ponemos en el tab de subir</h4>
+	<form action="php/upload.php" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+		<input type="file" name="file">
+			<input type="submit" name="submit" value="Subir">
+</form>
 </div>
 
 <div id="Seleccionar" class="tabcontent">
-	<input type="text" name="search" placeholder="Buscar..">
+	<input class="inputsearch" type="text" name="search" placeholder="Buscar..">
   <h3>Seleccionar</h3>
   <h4>Seleccionar el archivo de la cosa</h4>
 	<button class="tablinks" onclick="openCity(event, 'Nuevo')">Nuevo</button>
@@ -92,11 +115,33 @@ div.tab button.active {
 
 <div id="Nuevo" class="tabcontent">
   <h3>Nuevo</h3>
-  <h4>Honestamente no estoy seguro de que poner acanga</h4>
+			<form action="php/crear.php" method="post">
+				Nombre del nuevo archivo:</br>
+				<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+				<input type="text" name="filename">
+			</br>
+				Escribe o pega el texto que quieras imprimir
+				<textarea class="inputtext" name="editar"></textarea>
+				<input type="submit" name="submit" value="Crear">
+		</form>
 </div>
 <div id="Editar" class="tabcontent">
   <h3>Editar</h3>
-  <h4>Cojes un archivo... y lo editas</h4>
+		<form action="php/editar.php" method="post">
+			Selecciona el archivo que quieras editar</br>
+			<select class="inputselect" id="country" name="nombre">
+		<?php
+		echo "<option>...</option>";
+		foreach($arreglo as $v){
+		echo "<option value=". $v. ">". $v . "</option>";
+	}
+		?>
+  </select>
+</br>
+	Escribe o pega el texto que quieras imprimir
+			<textarea class="inputtext" name="editar"></textarea>
+			<input type="submit" name="submit" value="Guardar">
+	</form>
 </div>
 
 <script>

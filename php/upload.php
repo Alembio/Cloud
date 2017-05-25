@@ -6,8 +6,6 @@ $idusuario = $_SESSION["idusuario"]; //guardar la variable global como idusuario
 
 if($_POST){ //Si es que el usuario utiliza el "form"
 $filename = $_FILES['file']['name']; //Guarda los datos del archivo como variables
-$filetype = $_FILES['file']['type'];
-$filesize = $_FILES['file']['size'];
 $filetmp_name = $_FILES['file']['tmp_name'];
 $file_error = $_FILES['file']['error'];
 
