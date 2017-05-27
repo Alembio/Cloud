@@ -1,21 +1,20 @@
 <?php
-session_start();
-require_once('php/mysqli_connect.php');
+session_start(); //Iniciar función de variables globales
+require_once('php/mysqli_connect.php'); //Concetar a la base de datos
 
 $idusuario = $_SESSION["idusuario"];
 
-$sql = "SELECT * FROM Archivos where Usuario_idusuario = $idusuario";
-$result = $dbc->query($sql);
+$sql = "SELECT * FROM Archivos where Usuario_idusuario = $idusuario"; //Función de MYSQL
+$result = $dbc->query($sql); //Ejecutar función de MYSQL
 
 $arreglo = array();
 $i = 0;
 
 
-while($row = $result->fetch_array(MYSQLI_ASSOC)){
-$arreglo[$i] = $row["nombre"];
+while($row = $result->fetch_array(MYSQLI_ASSOC)){ //Mientras se encutentren datos
+$arreglo[$i] = $row["nombre"]; //Guardalos en un array
 $i ++;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +83,7 @@ div.tab button.active {
 <li><a href="ayuda.html">Ayuda</a></li>
 <li><a href="about.html">Acerca de</a></li>
 <li><a href="imprimir.html">Imprimir</a></li>
-<li><a href="archivos.html">Mis Arhivos</a></li>
+<li><a href="archivos.php">Mis Arhivos</a></li>
 </ul>
 </div>
 
@@ -107,9 +106,34 @@ div.tab button.active {
 </div>
 
 <div id="Seleccionar" class="tabcontent">
-	<input class="inputsearch" type="text" name="search" placeholder="Buscar..">
-  <h3>Seleccionar</h3>
-  <h4>Seleccionar el archivo de la cosa</h4>
+	<form method="post">
+	<input class="inputsearch" type="text" name="nombre" placeholder="Buscar..">
+	<input type="submit" name="submit" value="Buscar">
+	<h3>Seleccionar</h3>
+	<?php
+
+	if($_POST){ //Si se utiliza el boton buscar
+		$nombre = $_POST['nombre'];
+
+		$sql2 = "SELECT * FROM Archivos WHERE Usuario_idusuario = $idusuario and nombre LIKE '%$nombre%'"; //Función MYSQL
+		$result2 = $dbc->query($sql2); //Ejecutar función en la base de datos
+
+		while($row = $result2->fetch_array(MYSQLI_ASSOC)){ //Mientras se ecnuentren datos
+			$arreglo2 = array();
+			$i = 0;
+			$arreglo2[$i] = $row["nombre"]; //Guardalos en un array
+
+			echo "<ul>";
+			foreach($arreglo2 as $v){
+			echo "<li>". $v . "</li>"; //Imprime cada uno en una lista
+			}
+		echo "</ul>";
+		$i ++;
+			}
+}
+	?>
+</form>
+</br>
 	<button class="tablinks" onclick="openCity(event, 'Nuevo')">Nuevo</button>
 </div>
 
@@ -129,11 +153,11 @@ div.tab button.active {
   <h3>Editar</h3>
 		<form action="php/editar.php" method="post">
 			Selecciona el archivo que quieras editar</br>
-			<select class="inputselect" id="country" name="nombre">
+			<select class="inputselect" name="nombre">
 		<?php
 		echo "<option>...</option>";
 		foreach($arreglo as $v){
-		echo "<option value=". $v. ">". $v . "</option>";
+		echo "<option value=". $v. ">". $v . "</option>"; //Imprime cada dato del array en formato de opciones
 	}
 		?>
   </select>
