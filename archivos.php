@@ -118,18 +118,27 @@ div.tab button.active {
 		$sql2 = "SELECT * FROM Archivos WHERE Usuario_idusuario = $idusuario and nombre LIKE '%$nombre%'"; //Función MYSQL
 		$result2 = $dbc->query($sql2); //Ejecutar función en la base de datos
 
-		while($row = $result2->fetch_array(MYSQLI_ASSOC)){ //Mientras se ecnuentren datos
-			$arreglo2 = array();
-			$i = 0;
-			$arreglo2[$i] = $row["nombre"]; //Guardalos en un array
+if($result-> num_rows> 0){
 
-			echo "<ul>";
-			foreach($arreglo2 as $v){
-			echo "<li>". $v . "</li>"; //Imprime cada uno en una lista
-			}
-		echo "</ul>";
-		$i ++;
-			}
+	while($row = $result2->fetch_array(MYSQLI_ASSOC)){ //Mientras se ecnuentren datos
+		$arreglo2 = array();
+		$i = 0;
+		$arreglo2[$i] = $row["nombre"]; //Guardalos en un array
+
+		echo "<ul>";
+		foreach($arreglo2 as $v){
+		echo "<li>". $v . "</li>"; //Imprime cada uno en una lista
+		}
+	echo "</ul>";
+	$i ++;
+		}
+
+} else{ //Si no se ecnuentra ningun archivo
+
+echo 'No tienes ningun archivo :(';
+
+}
+
 }
 	?>
 </form>
@@ -142,7 +151,7 @@ div.tab button.active {
 			<form action="php/crear.php" method="post">
 				Nombre del nuevo archivo:</br>
 				<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-				<input type="text" name="filename">
+				<input type="text" name="filename" pattern="[^'\x22\x20]+" title="No utilices espacios">
 			</br>
 				Escribe o pega el texto que quieras imprimir
 				<textarea class="inputtext" name="editar"></textarea>
