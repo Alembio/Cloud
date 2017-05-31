@@ -127,7 +127,7 @@ if($result-> num_rows> 0){
 
 		echo "<ul>";
 		foreach($arreglo2 as $v){
-		echo "<li>". $v . "</li>"; //Imprime cada uno en una lista
+		echo "<li>"."<a href=\"web.html\">". $v ."</a>". "</li>"; //Imprime cada uno en una lista
 		}
 	echo "</ul>";
 	$i ++;
