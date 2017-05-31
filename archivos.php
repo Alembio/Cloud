@@ -120,18 +120,23 @@ div.tab button.active {
 
 if($result-> num_rows> 0){
 
+echo "<table>";
+
 	while($row = $result2->fetch_array(MYSQLI_ASSOC)){ //Mientras se ecnuentren datos
 		$arreglo2 = array();
 		$i = 0;
 		$arreglo2[$i] = $row["nombre"]; //Guardalos en un array
 
-		echo "<ul>";
 		foreach($arreglo2 as $v){
-		echo "<li>". $v . "</li>"; //Imprime cada uno en una lista
+		echo "<tr>";
+		echo "<td>". "<a href=\"error.html\">" . $v . "</a></td>"; //Imprime cada uno en una lista
+		echo "<td><input type=\"button\" value=\"BORRAR\"></td>";
+		echo "</tr>";
 		}
-	echo "</ul>";
 	$i ++;
 		}
+
+	echo "</table>";
 
 } else{ //Si no se ecnuentra ningun archivo
 
