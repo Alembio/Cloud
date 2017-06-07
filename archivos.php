@@ -1,215 +1,276 @@
-<?php
-session_start(); //Iniciar función de variables globales
-require_once('php/mysqli_connect.php'); //Concetar a la base de datos
-
-$idusuario = $_SESSION["idusuario"];
-
-$sql = "SELECT * FROM Archivos where Usuario_idusuario = $idusuario"; //Función de MYSQL
-$result = $dbc->query($sql); //Ejecutar función de MYSQL
-
-$arreglo = array();
-$i = 0;
-
-
-while($row = $result->fetch_array(MYSQLI_ASSOC)){ //Mientras se encutentren datos
-$arreglo[$i] = $row["nombre"]; //Guardalos en un array
-$i ++;
-}
-?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>Mis Archivos</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<style>
-h1 {text-align:center;}
-body {font-family: "Lato", sans-serif;}
-/* Style the tab */
-div.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    margin: 10px 150px 20px 450px; /*top right bottom left*/
-}
-/* Style the buttons inside the tab */
-div.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-}
-/* Change background color of buttons on hover */
-div.tab button:hover {
-    background-color: #ddd;
-}
-/* Create an active/current tablink class */
-div.tab button.active {
-    background-color: #ccc;
-}
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-		margin-right: 150px;
-		margin-left: 450px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    height: 50em
-=======
-		margin-left: 300px;
->>>>>>> parent of a006cb6... Cambie el margin de tabcontent
-=======
-		margin: 10px 150px 20px 450px;
->>>>>>> parent of 3add4d1... Abominacion
-}
-</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BR3G - Archivos</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
 <body>
 
-<div id="sidebar">
-	<img src="img/logo.jpg" class="sideimg">
-<ul>
-<li style="border-top: 1px solid black";><a href="web.html">Inicio</a></li>
-<li><a href="ayuda.html">Ayuda</a></li>
-<li><a href="about.html">Acerca de</a></li>
-<li><a href="imprimir.html">Imprimir</a></li>
-<li><a href="archivos.php">Mis Arhivos</a></li>
-</ul>
-</div>
+    <div id="wrapper">
 
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Subir')">Subir</button>
-  <button class="tablinks" onclick="openCity(event, 'Seleccionar')">Seleccionar</button>
-  <button class="tablinks" onclick="openCity(event, 'Nuevo')">Nuevo</button>
-		<button class="tablinks" onclick="openCity(event, 'Editar')">Editar</button>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        BR3G
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Inicio</a>
+                </li>
+                <li>
+                    <a href="#">Ayuda</a>
+                </li>
+                <li>
+                    <a href="#">Acerca de</a>
+                </li>
+                <li>
+                    <a href="#">Imprimir</a>
+                </li>
+                <li>
+                    <a href="#">Mis archivos</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+          <!--Poner todo el contenido entre estos 2 tags @ -->
+					<?php
+					session_start(); //Iniciar función de variables globales
+					require_once('php/mysqli_connect.php'); //Concetar a la base de datos
+					$idusuario = $_SESSION["idusuario"];
+					$sql = "SELECT * FROM Archivos where Usuario_idusuario = $idusuario"; //Función de MYSQL
+					$result = $dbc->query($sql); //Ejecutar función de MYSQL
+					$arreglo = array();
+					$i = 0;
+					while($row = $result->fetch_array(MYSQLI_ASSOC)){ //Mientras se encutentren datos
+					$arreglo[$i] = $row["nombre"]; //Guardalos en un array
+					$i ++;
+					}
+					?>
 
 
-</div>
+					<html>
 
-<div id="Subir" class="tabcontent">
-  <h3>Subir</h3>
-	<form action="php/upload.php" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-		<input type="file" name="file">
-			<input type="submit" name="submit" value="Subir">
-</form>
-</div>
+					<head>
+						<title>Mis Archivos</title>
+						<link rel="stylesheet" type="text/css" href="css/style.css">
 
-<div id="Seleccionar" class="tabcontent">
-	<form method="post">
-	<input class="inputsearch" type="text" name="nombre" placeholder="Buscar..">
-	<input type="submit" name="submit" value="Buscar">
-	<h3>Seleccionar</h3>
+						<style>
+					h1 {text-align:center;}
+					body {font-family: "Lato", sans-serif;}
+					/* Style the tab */
+					div.tab {
+					    overflow: hidden;
+					    border: 1px solid #ccc;
+					    background-color: #f1f1f1;
+					    margin: 10px 150px 20px 450px; /*top right bottom left*/
+					}
+					/* Style the buttons inside the tab */
+					div.tab button {
+					    background-color: inherit;
+					    float: left;
+					    border: none;
+					    outline: none;
+					    cursor: pointer;
+					    padding: 14px 16px;
+					    transition: 0.3s;
+					    font-size: 17px;
+					}
+					/* Change background color of buttons on hover */
+					div.tab button:hover {
+					    background-color: #ddd;
+					}
+					/* Create an active/current tablink class */
+					div.tab button.active {
+					    background-color: #ccc;
+					}
+					/* Style the tab content */
+					.tabcontent {
+					    display: none;
+					    padding: 6px 12px;
+					    border: 1px solid #ccc;
+					    border-top: 1px solid #ccc;
+							margin-right: 150px;
+							margin-left: 450px;
+					<<<<<<< HEAD
+					<<<<<<< HEAD
+					    height: 50em
+					=======
+							margin-left: 300px;
+					>>>>>>> parent of a006cb6... Cambie el margin de tabcontent
+					=======
+							margin: 10px 150px 20px 450px;
+					>>>>>>> parent of 3add4d1... Abominacion
+					}
+					</style>
+					</head>
 
-	<?php
+					<body>
 
-	if($_POST): //Si se utiliza el boton buscar
-		$nombre = $_POST['nombre'];
+					
+					<div class="tab">
+					  <button class="tablinks" onclick="openCity(event, 'Subir')">Subir</button>
+					  <button class="tablinks" onclick="openCity(event, 'Seleccionar')">Seleccionar</button>
+					  <button class="tablinks" onclick="openCity(event, 'Nuevo')">Nuevo</button>
+							<button class="tablinks" onclick="openCity(event, 'Editar')">Editar</button>
 
-		$sql2 = "SELECT nombre, idarchivos FROM Archivos WHERE Usuario_idusuario = $idusuario and nombre LIKE '%$nombre%'"; //Función MYSQL
-		$result2 = $dbc->query($sql2); //Ejecutar función en la base de datos
 
-<<<<<<< HEAD
-if($result-> num_rows> 0){
+					</div>
 
-	while($row = $result2->fetch_array(MYSQLI_ASSOC)){ //Mientras se ecnuentren datos
-		$arreglo2 = array();
-		$i = 0;
-		$arreglo2[$i] = $row["nombre"]; //Guardalos en un array
+					<div id="Subir" class="tabcontent">
+					  <h3>Subir</h3>
+						<form action="php/upload.php" method="post" enctype="multipart/form-data">
+							<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+							<input type="file" name="file">
+								<input type="submit" name="submit" value="Subir">
+					</form>
+					</div>
 
-		echo "<ul>";
-		foreach($arreglo2 as $v){
-		echo "<li>"."<a href=\"web.html\">". $v ."</a>". "</li>"; //Imprime cada uno en una lista
-		}
-	echo "</ul>";
-	$i ++;
-		}
+					<div id="Seleccionar" class="tabcontent">
+						<form method="post">
+						<input class="inputsearch" type="text" name="nombre" placeholder="Buscar..">
+						<input type="submit" name="submit" value="Buscar">
+						<h3>Seleccionar</h3>
 
-} else{ //Si no se ecnuentra ningun archivo
-=======
-$i = 0;
-$arreglo2 = array();
+						<?php
+						if($_POST): //Si se utiliza el boton buscar
+							$nombre = $_POST['nombre'];
+							$sql2 = "SELECT nombre, idarchivos FROM Archivos WHERE Usuario_idusuario = $idusuario and nombre LIKE '%$nombre%'"; //Función MYSQL
+							$result2 = $dbc->query($sql2); //Ejecutar función en la base de datos
+					$i = 0;
+					$arreglo2 = array();
+					if($result2-> num_rows> 0):
+					?>
+					<table>
 
-if($result2-> num_rows> 0):
+					<?php while($row = $result2->fetch_array(MYSQLI_ASSOC)): //Por cada registro encontrado, guardar los datos buscados en el arreglo row?>
 
-?>
-<table>
+							<tr>
+							<td><a href="archivos.php"><?php echo $row['nombre']?></a></td> <!--Imprime cada archivo existente en la base de datos-->
+							<td><a href="php/eliminar.php?id=<?php echo $row['idarchivos']?>">Borrar</td> <!--Guardar el id en un arreglo-->
+						  </tr>
 
-<?php while($row = $result2->fetch_array(MYSQLI_ASSOC)): //Por cada registro encontrado, guardar los datos buscados en el arreglo row?>
->>>>>>> refs/remotes/origin/master
+					<?php endwhile;
+								endif;
+							endif; //Cerrar los loops?>
 
-		<tr>
-		<td><a href="archivos.php"><?php echo $row['nombre']?></a></td> <!--Imprime cada archivo existente en la base de datos-->
-		<td><a href="php/eliminar.php?id=<?php echo $row['idarchivos']?>">Borrar</td> <!--Guardar el id en un arreglo-->
-	  </tr>
+					</table>
+					</form>
 
-<?php endwhile;
-			endif;
-		endif; //Cerrar los loops?>
+					</br>
+						<button class="tablinks" onclick="openCity(event, 'Nuevo')">Nuevo</button>
+					</div>
 
-</table>
-</form>
+					<div id="Nuevo" class="tabcontent">
+					  <h3>Nuevo</h3>
+								<form action="php/crear.php" method="post">
+									Nombre del nuevo archivo:</br>
+									<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+									<input type="text" name="filename" pattern="[^'\x22\x20]+" title="No utilices espacios">
+								</br>
+									Escribe o pega el texto que quieras imprimir
+									<textarea class="inputtext" name="editar"></textarea>
+									<input type="submit" name="submit" value="Crear">
+							</form>
+					</div>
+					<div id="Editar" class="tabcontent">
+					  <h3>Editar</h3>
+							<form action="php/editar.php" method="post">
+								Selecciona el archivo que quieras editar</br>
+								<select class="inputselect" name="nombre">
+							<?php
+							echo "<option>...</option>";
+							foreach($arreglo as $v){
+							echo "<option value=". $v. ">". $v . "</option>"; //Imprime cada dato del array en formato de opciones
+						}
+							?>
+					  </select>
+					</br>
+						Escribe o pega el texto que quieras imprimir
+								<textarea class="inputtext" name="editar"></textarea>
+								<input type="submit" name="submit" value="Guardar">
+						</form>
+					</div>
 
-</br>
-	<button class="tablinks" onclick="openCity(event, 'Nuevo')">Nuevo</button>
-</div>
+					<script>
+					function openCity(evt, cityName) {
+					    var i, tabcontent, tablinks;
+					    tabcontent = document.getElementsByClassName("tabcontent");
+					    for (i = 0; i < tabcontent.length; i++) {
+					        tabcontent[i].style.display = "none";
+					    }
+					    tablinks = document.getElementsByClassName("tablinks");
+					    for (i = 0; i < tablinks.length; i++) {
+					        tablinks[i].className = tablinks[i].className.replace(" active", "");
+					    }
+					    document.getElementById(cityName).style.display = "block";
+					    evt.currentTarget.className += " active";
+					}
+					</script>
 
-<div id="Nuevo" class="tabcontent">
-  <h3>Nuevo</h3>
-			<form action="php/crear.php" method="post">
-				Nombre del nuevo archivo:</br>
-				<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-				<input type="text" name="filename" pattern="[^'\x22\x20]+" title="No utilices espacios">
-			</br>
-				Escribe o pega el texto que quieras imprimir
-				<textarea class="inputtext" name="editar"></textarea>
-				<input type="submit" name="submit" value="Crear">
-		</form>
-</div>
-<div id="Editar" class="tabcontent">
-  <h3>Editar</h3>
-		<form action="php/editar.php" method="post">
-			Selecciona el archivo que quieras editar</br>
-			<select class="inputselect" name="nombre">
-		<?php
-		echo "<option>...</option>";
-		foreach($arreglo as $v){
-		echo "<option value=". $v. ">". $v . "</option>"; //Imprime cada dato del array en formato de opciones
-	}
-		?>
-  </select>
-</br>
-	Escribe o pega el texto que quieras imprimir
-			<textarea class="inputtext" name="editar"></textarea>
-			<input type="submit" name="submit" value="Guardar">
-	</form>
-</div>
+					</body>
 
-<script>
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-</script>
+
+          <!--Poner todo el contenido entre estos 2 tags @-->
+
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 
 </body>
+
 </html>
