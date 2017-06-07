@@ -110,14 +110,16 @@ div.tab button.active {
 	<input class="inputsearch" type="text" name="nombre" placeholder="Buscar..">
 	<input type="submit" name="submit" value="Buscar">
 	<h3>Seleccionar</h3>
+
 	<?php
 
-	if($_POST){ //Si se utiliza el boton buscar
+	if($_POST): //Si se utiliza el boton buscar
 		$nombre = $_POST['nombre'];
 
-		$sql2 = "SELECT * FROM Archivos WHERE Usuario_idusuario = $idusuario and nombre LIKE '%$nombre%'"; //Función MYSQL
+		$sql2 = "SELECT nombre, idarchivos FROM Archivos WHERE Usuario_idusuario = $idusuario and nombre LIKE '%$nombre%'"; //Función MYSQL
 		$result2 = $dbc->query($sql2); //Ejecutar función en la base de datos
 
+<<<<<<< HEAD
 if($result-> num_rows> 0){
 
 	while($row = $result2->fetch_array(MYSQLI_ASSOC)){ //Mientras se ecnuentren datos
@@ -134,14 +136,30 @@ if($result-> num_rows> 0){
 		}
 
 } else{ //Si no se ecnuentra ningun archivo
+=======
+$i = 0;
+$arreglo2 = array();
 
-echo 'No tienes ningun archivo :(';
+if($result2-> num_rows> 0):
 
-}
+?>
+<table>
 
-}
-	?>
+<?php while($row = $result2->fetch_array(MYSQLI_ASSOC)): //Por cada registro encontrado, guardar los datos buscados en el arreglo row?>
+>>>>>>> refs/remotes/origin/master
+
+		<tr>
+		<td><a href="archivos.php"><?php echo $row['nombre']?></a></td> <!--Imprime cada archivo existente en la base de datos-->
+		<td><a href="php/eliminar.php?id=<?php echo $row['idarchivos']?>">Borrar</td> <!--Guardar el id en un arreglo-->
+	  </tr>
+
+<?php endwhile;
+			endif;
+		endif; //Cerrar los loops?>
+
+</table>
 </form>
+
 </br>
 	<button class="tablinks" onclick="openCity(event, 'Nuevo')">Nuevo</button>
 </div>
