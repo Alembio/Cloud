@@ -1,6 +1,6 @@
 <?php
-session_start();
-require_once('mysqli_connect.php');
+session_start(); // Iniciar función de variables globales
+require_once('mysqli_connect.php'); // Conetar a la base de datos
 
 $idusuario = $_SESSION["idusuario"];
 
