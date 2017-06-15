@@ -130,7 +130,7 @@
 
 					<div class="tab">
 					  <button class="tablinks" onclick="openCity(event, 'Subir')">Subir</button>
-					  <button class="tablinks" onclick="openCity(event, 'Seleccionar')">Seleccionar</button>
+					  <button class="tablinks" onclick="openCity(event, 'Seleccionar')" id="defaultOpen">Seleccionar</button>
 					  <button class="tablinks" onclick="openCity(event, 'Nuevo')">Nuevo</button>
 							<button class="tablinks" onclick="openCity(event, 'Editar')">Editar</button>
 
@@ -223,6 +223,7 @@
 					</div>
 
 					<script>
+          document.getElementById("defaultOpen").click();
 					function openCity(evt, cityName) {
 					    var i, tabcontent, tablinks;
 					    tabcontent = document.getElementsByClassName("tabcontent");
