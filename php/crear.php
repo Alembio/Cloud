@@ -15,7 +15,7 @@ file_put_contents($edit, $write); //Crea o edita el archivo (PATH, LO QUE QUIERE
 $sql2 = "INSERT INTO Archivos (nombre, Usuario_idusuario) VALUES('$newfile', '$idusuario')"; //Insertar en la base de datos el nombre del nuevo archivo
 
 $filename = $newfile . '.txt'; // Agregarle al nombre .txt al final
-$string = 'C:\\Python27\\python.exe C:\\wamp64\\www\\proyecto-mysql\\python\\main.py' . ' ' . $filename . ' ' . $idusuario . ' 2>&1'; // Path de python, Path del script de pyton, argumento
+$string = 'C:\\Python27\\python.exe C:\\wamp64\\www\\Cloud\\python\\main.py' . ' ' . $filename . ' ' . $idusuario . ' 2>&1'; // Path de python, Path del script de pyton, argumento
 echo $string . ' ';
 $result = shell_exec($string); // Ejecutar script de python
 
