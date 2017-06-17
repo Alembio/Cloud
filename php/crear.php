@@ -6,7 +6,7 @@ $idusuario = $_SESSION["idusuario"];
 
 $newfile = $_POST['filename']; //Archivo seleccionado
 
-$edit = '../Archivos/' . $idusuario . . '/' . $newfile . '.txt'; //PATH  del archivo
+$edit = '../Archivos/' . $idusuario .  '/' . $newfile . '.txt'; //PATH  del archivo
 $write = $_POST['editar']; //Lo que el usuairo escribe en text area
 
 
