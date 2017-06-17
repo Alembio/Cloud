@@ -21,13 +21,13 @@ if  ($_GET) {
 
         $file = implode($arreglo);//Convertir el array en string
 
-        $delete = 'C:/wamp64/www/proyecto-mysql/Archivos/' . $idusuario .  '/' . $file . '.txt';
+        $delete = 'C:/wamp64/www/Cloud/Archivos/' . $idusuario .  '/' . $file . '.txt';
         unlink($delete);
 
-        $delete2 = 'C:/wamp64/www/proyecto-mysql//EPS/' . $idusuario .  '/' . $file . '_img.eps';
+        $delete2 = 'C:/wamp64/www/Cloud/EPS/' . $idusuario .  '/' . $file . '_img.eps';
         unlink($delete2);
 
-        $delete3 = 'C:/wamp64/www/proyecto-mysql//puntos/' . $idusuario .  '/' . $file . '_puntos.txt';
+        $delete3 = 'C:/wamp64/www/Cloud/puntos/' . $idusuario .  '/' . $file . '_puntos.txt';
         unlink($delete3);
 
         $sql3 = "DELETE FROM Archivos WHERE idarchivos = $idd and Usuario_idusuario = $idusuario"; //Función de MYSQL

@@ -16,9 +16,9 @@ if($result-> num_rows> 0){ // Si el resultado tiene por lo menos 1 fila
 		$idusuario = $row[1]; // Guardar el id del usuario
 		$_SESSION["idusuario"] = $idusuario; // Guardarlo nuevamente como una variable global
 
-		$string = 'C:/wamp64/www/proyecto-mysql/Archivos/' . $idusuario;
-		$string2 = 'C:/wamp64/www/proyecto-mysql/EPS/' . $idusuario;
-		$string3 = 'C:/wamp64/www/proyecto-mysql/puntos/' . $idusuario;
+		$string = 'C:/wamp64/www/Cloud/Archivos/' . $idusuario;
+		$string2 = 'C:/wamp64/www/Cloud/EPS/' . $idusuario;
+		$string3 = 'C:/wamp64/www/Cloud/puntos/' . $idusuario;
 
 			if(!is_dir($string) && !is_dir($string2) && !is_dir($string3)){
 				mkdir($string);

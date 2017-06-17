@@ -12,7 +12,7 @@ $file_error = $_FILES['file']['error'];
 $parts = explode('.' , $filename); // Separar el nombre en un arreglo a partir el '.'
 $nombre = $parts[0]; // Guardar solo lo que esta antes del punto en una variable
 
-$dir = 'C:/wamp64/www/proyecto-mysql/Archivos/' . $idusuario . '/'; // Dirección donde queremos que se guarde el archivo
+$dir = 'C:/wamp64/www/Cloud/Archivos/' . $idusuario . '/'; // Dirección donde queremos que se guarde el archivo
 $file = $dir . basename($nombre) . '.txt'; // Dirección donde queremos que se guarde + el nombre del archivo
 
 
@@ -24,7 +24,7 @@ if (move_uploaded_file($_FILES['file']['tmp_name'], $file)) { // Copiar el archi
 
 $sql2 = "INSERT INTO Archivos (nombre, Usuario_idusuario) VALUES('$nombre', '$idusuario')"; // Comando de insertar de MYSQL
 
-$string = 'C:\\Python27\\python.exe C:\\wamp64\\www\\proyecto-mysql\\python\\main.py' . ' ' . $filename . ' ' . $idusuario . ' 2>&1';  // Path de python, Path del script de pyton, argumento
+$string = 'C:\\Python27\\python.exe C:\\wamp64\\www\\Cloud\\python\\main.py' . ' ' . $filename . ' ' . $idusuario . ' 2>&1';  // Path de python, Path del script de pyton, argumento
 //echo $string . ' ';
 $result = shell_exec($string); // Ejecutar script de python
 

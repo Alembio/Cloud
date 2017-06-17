@@ -16,7 +16,7 @@ turtle.ht()
 #Velocidad 1 min 10 max
 turtle.speed(10)
 
-direccion="C:/wamp64/www/proyecto-mysql/Archivos/" + idusuario + "/"
+direccion="C:/wamp64/www/Cloud/Archivos/" + idusuario + "/"
 print direccion
 filename= phpfile
 #abrir el file a leer y llamarlo f
@@ -84,14 +84,14 @@ print len(out)
 nombre=os.path.splitext(filename)[0]
 print nombre
 
-direccion2 = "C:/wamp64/www/proyecto-mysql/EPS/" + idusuario + "/"
+direccion2 = "C:/wamp64/www/Cloud/EPS/" + idusuario + "/"
 print direccion2
 canvas=turtle.getscreen()
 canvas.getcanvas().postscript(file= direccion2 + nombre + "_img.eps")
 
 nomdenuevo= nombre + "_puntos.txt"
 
-direccion3 = "C:/wamp64/www/proyecto-mysql/puntos/" + idusuario + "/"
+direccion3 = "C:/wamp64/www/Cloud/puntos/" + idusuario + "/"
 print direccion3
 nuevo=open(direccion3 + nomdenuevo,"w")
 nuevo.write(" ".join(str(x) for x in out))
