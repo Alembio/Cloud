@@ -66,14 +66,6 @@
 					session_start(); //Iniciar función de variables globales
 					require_once('php/mysqli_connect.php'); //Concetar a la base de datos
 					$idusuario = $_SESSION["idusuario"];
-					$sql = "SELECT * FROM Archivos where Usuario_idusuario = $idusuario"; //Función de MYSQL
-					$result = $dbc->query($sql); //Ejecutar función de MYSQL
-					$arreglo = array();
-					$i = 0;
-					while($row = $result->fetch_array(MYSQLI_ASSOC)){ //Mientras se encutentren datos
-					$arreglo[$i] = $row["nombre"]; //Guardalos en un array
-					$i ++;
-					}
 					?>
 
 
@@ -135,10 +127,10 @@
 
 					<body>
 
-					
+
 					<div class="tab">
 					  <button class="tablinks" onclick="openCity(event, 'Subir')">Subir</button>
-					  <button class="tablinks" onclick="openCity(event, 'Seleccionar')">Seleccionar</button>
+					  <button class="tablinks" onclick="openCity(event, 'Seleccionar')" id="defaultOpen">Seleccionar</button>
 					  <button class="tablinks" onclick="openCity(event, 'Nuevo')">Nuevo</button>
 							<button class="tablinks" onclick="openCity(event, 'Editar')">Editar</button>
 
@@ -207,6 +199,16 @@
 								Selecciona el archivo que quieras editar</br>
 								<select class="inputselect" name="nombre">
 							<?php
+
+              $sql = "SELECT * FROM Archivos where Usuario_idusuario = $idusuario"; //Función de MYSQL
+    					$result = $dbc->query($sql); //Ejecutar función de MYSQL
+    					$arreglo = array();
+    					$i = 0;
+    					while($row = $result->fetch_array(MYSQLI_ASSOC)){ //Mientras se encutentren datos
+    					$arreglo[$i] = $row["nombre"]; //Guardalos en un array
+    					$i ++;
+    					}
+              
 							echo "<option>...</option>";
 							foreach($arreglo as $v){
 							echo "<option value=". $v. ">". $v . "</option>"; //Imprime cada dato del array en formato de opciones
@@ -221,6 +223,7 @@
 					</div>
 
 					<script>
+          document.getElementById("defaultOpen").click();
 					function openCity(evt, cityName) {
 					    var i, tabcontent, tablinks;
 					    tabcontent = document.getElementsByClassName("tabcontent");
