@@ -208,7 +208,7 @@
     					$arreglo[$i] = $row["nombre"]; //Guardalos en un array
     					$i ++;
     					}
-              
+
 							echo "<option>...</option>";
 							foreach($arreglo as $v){
 							echo "<option value=". $v. ">". $v . "</option>"; //Imprime cada dato del array en formato de opciones

@@ -4,9 +4,6 @@ from library import *
 import os.path
 import sys
 
-phpfile = sys.argv[1]
-idusuario = sys.argv[2]
-
 #crear unna tortuga llamada turtle
 turtle=turtle
 
@@ -16,8 +13,8 @@ turtle.ht()
 #Velocidad 1 min 10 max
 turtle.speed(10)
 
-direccion="C:/wamp64/www/Cloud/Archivos/" + idusuario + "/"
-filename= phpfile
+direccion="C:/wamp64/www/pruebas/"
+filename= "prueba.txt"
 #abrir el file a leer y llamarlo f
 f=open(direccion + filename,"r")
 #guardar en s el string de todo el file
@@ -79,13 +76,13 @@ for count in range(len(s)):
 
 nombre=os.path.splitext(filename)[0]
 
-direccion2 = "C:/wamp64/www/Cloud/EPS/" + idusuario + "/"
+direccion2 = "C:/wamp64/www/pruebas/"
 canvas=turtle.getscreen()
 canvas.getcanvas().postscript(file= direccion2 + nombre + "_img.eps")
 
 nomdenuevo= nombre + "_puntos.txt"
 
-direccion3 = "C:/wamp64/www/Cloud/puntos/" + idusuario + "/"
+direccion3 = "C:/wamp64/www/pruebas/"
 nuevo=open(direccion3 + nomdenuevo,"w")
 nuevo.write(" ".join(str(x) for x in out))
 nuevo.close()
