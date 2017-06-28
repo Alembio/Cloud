@@ -225,7 +225,7 @@
             </select>
           </br>
             Escribe o pega el texto que quieras imprimir
-          </br>
+        </br><br>
                 <textarea class="inputtext" name="editar" rows ="4" cols="100"></textarea>
                 <input type="submit" name="submit" value="Guardar">
             </form>
