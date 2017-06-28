@@ -34,24 +34,20 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
-                        BR3G
-                    </a>
+                  <img src="img/logo.png" width="200" height="80" class="logo" style="margin-top: 15mm;margin-bottom: 2cm;">
+                </li>
+                <li style="margin-top: 25mm;">
+                    <a href="ayuda.html">Ayuda</a>
                 </li>
                 <li>
-                    <a href="#">Inicio</a>
+                    <a href="about.html">Acerca de</a>
+                </li>
+
+                <li>
+                    <a href="archivos.php">Mis archivos</a>
                 </li>
                 <li>
-                    <a href="#">Ayuda</a>
-                </li>
-                <li>
-                    <a href="#">Acerca de</a>
-                </li>
-                <li>
-                    <a href="#">Imprimir</a>
-                </li>
-                <li>
-                    <a href="#">Mis archivos</a>
+                  <a href="index.html">Logout</a>
                 </li>
 
             </ul>

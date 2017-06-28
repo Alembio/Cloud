@@ -33,7 +33,7 @@ if($result-> num_rows> 0){ // Si el resultado tiene por lo menos 1 fila
 					}
 
 
-		header("Location: ../web.html"); // Redireccionar a web.html
+		header("Location: ../archivos.php"); // Redireccionar a web.html
 
 	} else // Si no se ecnuentra nada
 
