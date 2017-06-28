@@ -166,8 +166,9 @@
 					<?php while($row = $result2->fetch_array(MYSQLI_ASSOC)): //Por cada registro encontrado, guardar los datos buscados en el arreglo row?>
 
 							<tr>
-							<td><a href="archivos.php"><?php echo $row['nombre']?></a></td> <!--Imprime cada archivo existente en la base de datos-->
+							<td><a href="php/buscar.php?nombre=<?php echo $row['nombre']?>"><?php echo $row['nombre']?></a></td> <!--Imprime cada archivo existente en la base de datos-->
 							<td><a href="php/eliminar.php?id=<?php echo $row['idarchivos']?>">Borrar</td> <!--Guardar el id en un arreglo-->
+
 						  </tr>
 
 					<?php endwhile;
