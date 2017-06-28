@@ -144,9 +144,11 @@
 
           <div id="Subir" class="tabcontent">
             <h3>Subir</h3>
+          </br>
             <form action="php/upload.php" method="post" enctype="multipart/form-data">
               <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
               <input type="file" name="file">
+            </br>
                 <input type="submit" name="submit" value="Subir">
           </form>
           </div>
@@ -194,13 +196,14 @@
                   <input type="text" name="filename" pattern="[^'\x22\x20]+" title="No utilices espacios">
                 </br>
                   Escribe o pega el texto que quieras imprimir
-                  <textarea class="inputtext" name="editar"></textarea>
+                </br>
+                  <textarea class="inputtext" name="editar" rows ="4" cols="100"></textarea>
                   <input type="submit" name="submit" value="Crear">
               </form>
           </div>
           <div id="Editar" class="tabcontent">
             <h3>Editar</h3>
-              <form action="php/editar.php" method="post">
+              <form action="php/editar.php" method="post" >
                 Selecciona el archivo que quieras editar</br>
                 <select class="inputselect" name="nombre">
               <?php
@@ -222,7 +225,8 @@
             </select>
           </br>
             Escribe o pega el texto que quieras imprimir
-                <textarea class="inputtext" name="editar"></textarea>
+          </br>
+                <textarea class="inputtext" name="editar" rows ="4" cols="100"></textarea>
                 <input type="submit" name="submit" value="Guardar">
             </form>
           </div>
