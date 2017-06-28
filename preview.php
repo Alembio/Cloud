@@ -120,10 +120,18 @@
         <!-- /.row -->
 
         <!-- Portfolio Item Row -->
-        <div class="row">
+        <?php
 
+        session_start();
+        $idusuario = $_SESSION["idusuario"];
+        $nfile = $_SESSION["filename"];
+        $file = 'C:/wamp64/www/Cloud/Archivos/' . $idusuario . '/' . $nfile;
+        $document = file_get_contents($file);
+
+         ?>
+        <div class="row">
             <div class="col-md-8">
-                <img class="img-responsive" src="img/logo.png">
+                <p><?php echo $document?></p>
             </div>
 
             <div class="col-md-4">

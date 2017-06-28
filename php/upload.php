@@ -28,8 +28,10 @@ $string = 'C:\\Python27\\python.exe C:\\wamp64\\www\\Cloud\\python\\main.py' . '
 //echo $string . ' ';
 $result = shell_exec($string); // Ejecutar script de python
 
+$_SESSION["filename"] = $filename;
+
 if($dbc->query($sql2) === TRUE){ // Si se ejecuta e comando de MYSQL
-  header("Location: ../preview.html"); //Redireccionar a preview.html
+  header("Location: ../preview.php"); //Redireccionar a preview.html
 } else{
   echo 'Error ' . $sql2 . ' ' . $dbc->connect_error; // IMprimir error
 }
