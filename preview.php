@@ -34,6 +34,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
+<<<<<<< HEAD:preview.html
                     <a href="archivos.php">
                         <img src="img/logo.png" width="200" height="80" class="logo" style="margin-top: 15mm;margin-bottom: 2cm;">
                     </a>
@@ -42,6 +43,11 @@
                 <li>
                   </br>
                   </br></br>
+=======
+                  <img src="img/logo.png" width="200" height="80" class="logo" style="margin-top: 15mm;margin-bottom: 2cm;">
+                </li>
+                <li style="margin-top: 25mm;">
+>>>>>>> origin/master:preview.php
                     <a href="ayuda.html">Ayuda</a>
                 </li>
                 <li>
@@ -123,10 +129,18 @@
         <!-- /.row -->
 
         <!-- Portfolio Item Row -->
-        <div class="row">
+        <?php
 
+        session_start();
+        $idusuario = $_SESSION["idusuario"];
+        $nfile = $_SESSION["filename"];
+        $file = 'C:/wamp64/www/Cloud/Archivos/' . $idusuario . '/' . $nfile;
+        $document = file_get_contents($file);
+
+         ?>
+        <div class="row">
             <div class="col-md-8">
-                <img class="img-responsive" src="img/logo.png">
+                <p><?php echo $document?></p>
             </div>
 
             <div class="col-md-4">
