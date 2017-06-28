@@ -11,6 +11,7 @@
   			  	<td align="left">Nombre:</td>
   					<td>&#160</td>
   					<td align="center"><input type="text" name="nombre"></td>
+
   			  </tr>
 			  <tr>
 			  	<td align="left">Usuario:</td>
