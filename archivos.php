@@ -88,7 +88,7 @@
               overflow: hidden;
               border: 1px solid #ccc;
               background-color: #f1f1f1;
-              margin: 10px 150px 20px 450px; /*top right bottom left*/
+              margin: 10px 150px 20px 150px; /*top right bottom left*/
           }
           /* Style the buttons inside the tab */
           div.tab button {
@@ -116,16 +116,9 @@
               border: 1px solid #ccc;
               border-top: 1px solid #ccc;
               margin-right: 150px;
-              margin-left: 450px;
-          <<<<<<< HEAD
-          <<<<<<< HEAD
-              height: 50em
-          =======
-              margin-left: 300px;
-          >>>>>>> parent of a006cb6... Cambie el margin de tabcontent
-          =======
-              margin: 10px 150px 20px 450px;
-          >>>>>>> parent of 3add4d1... Abominacion
+              margin-left: 150px;
+
+
           }
           </style>
           </head>
@@ -196,8 +189,10 @@
                   <input type="text" name="filename" pattern="[^'\x22\x20]+" title="No utilices espacios">
                 </br>
                   Escribe o pega el texto que quieras imprimir
-                </br>
+
+                <br></br>
                   <textarea class="inputtext" name="editar" rows ="4" cols="100"></textarea>
+                  <br></br>
                   <input type="submit" name="submit" value="Crear">
               </form>
           </div>
@@ -225,8 +220,9 @@
             </select>
           </br>
             Escribe o pega el texto que quieras imprimir
-          </br>
+          <br></br>
                 <textarea class="inputtext" name="editar" rows ="4" cols="100"></textarea>
+                <br></br>
                 <input type="submit" name="submit" value="Guardar">
             </form>
           </div>
@@ -260,7 +256,7 @@
                 <div class="row">
                     <div class="col-lg-12">
 
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style = "margin-left: 140px; margin-top: 30px">Menu</a>
                     </div>
                 </div>
             </div>
