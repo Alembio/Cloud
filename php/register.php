@@ -193,7 +193,7 @@ input[type=password]{
   margin-top: 20px;
 }
 
-a.button {
+button {
   font-size: 14px;
   font-weight: 600;
   color: white;
@@ -202,7 +202,7 @@ a.button {
   display: inline-block;
   float: right;
   text-decoration: none;
-  width: 50px; height: 27px;
+  width: 100px; height: 27px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -215,7 +215,7 @@ a.button {
   position: relative;
 }
 
-a.button:hover {
+button:hover {
   top: 3px;
   background-color:#2e458b;
   -webkit-box-shadow: none;
@@ -251,8 +251,8 @@ a.button:hover {
 	<label id="icon" for="name"><i class="icon-shield"></i></label>
 	<input type="password" name="clave2"  placeholder="Confirmar contraseña" required/>
 
+  <button type = "submit" value="Registrar" class="button">Registrar</button>
 
-   <a href="../index.html" class="button" type= "submit" name = 'submit' value = "Registrar">Registrar</a>
  </from>
 </div>
 
