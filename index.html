@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login</title>
-
-</head>
-
-<style>
-
-form {
-	padding: 15px 32px;
-	text-decoration: none;
-	display: block;
-	font-size: 30px;
-}
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+<style>@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
   width: 360px;
@@ -112,60 +97,20 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+}</style><div class="login-page">
 
-.input1{
-	height: 30px;
-	width: 350px;
-	font-size: 20px;
-	justify-content: space-around;
-}
-
-.input2{
-	height: 40px;
-	width: 150px;
-	font-size: 20px;
-}
-
-table, td {
-	height: 70px;
-	width: 45%;
-	margin: 10px 100px 100px 350px;
-}
+  <div class="form">
+    <img src=img/logo.png style="width:200px;height:80px;">
+    <br></br>
 
 
-.logo{
-	margin: 70px 150px 0px 500px; /*top right bottom left*/
-
-}
-
-</style>
-
-<body>
-
-		<img src="img/logo.png" width="350" height="143" class="logo" style="left: 50%;">
-
-		<form action="php/log.php" method="post">
-			  <table>
-			  <tr>
-			  	<td align="left">Usuario:</td>
-
-					<td align="center"><input type="text" name="login" class="input1"></td>
-			  </tr>
-			  <tr>
-			  	<td align="left">Contrasena:</td>
-
-					<td align="center"><input type="password" name="clave" class="input1"></td>
-			  </tr>
-			  <tr>
-
-			    <td colspan="2" align="center"><input type="submit" name="submit" value="IR" class="input2"></td>
-			  </tr>
-				<tr>
-
-					<td colspan="2" align="right" style="font-size: 18px;"><a href="php/register.php" style="text-decoration: none;">Resgistrate</a></td>
-				</tr>
-			</table>
-		</form>
-</body>
-</html>
+    </form>
+    <form class="login-form" action ="php/log.php" method="post">
+      <input type="text" placeholder="usuario" name = "login" class = "input1"/>
+      <input type="password" placeholder="contrasena" name= "clave" class="input1"/>
+      <button type = "submit" value="submit">Entrar</button>
+      <p class="message">No estas registrado?
+        <a href="php/register2.php">Crea tu cuenta</a></p>
+    </form>
+  </div>
+</div>
