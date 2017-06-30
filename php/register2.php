@@ -192,29 +192,29 @@ a.button:hover {
 <div class="testbox">
   <h1>Registrate</h1>
 
-  <form action="php/register.php">
+  <form method="post">
       <hr>
 
-  <hr>
+  
   <label id="icon" for="name"><i class="icon-envelope "></i></label>
-  <input type="text" name="name" id="name" placeholder="Correo" required/>
+  <input type="text" name="email"  placeholder="Correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="El email que ingreso no existe" required/>
 
 
   <label id="icon" for="name"><i class="icon-user"></i></label>
-  <input type="text" name="name" id="name" placeholder="Nombre" required/>
+  <input type="text" name="nombre"  placeholder="Nombre" required/>
 
 	<label id="icon" for="name"><i class="icon-user"></i></label>
-	<input type="text" name="name" id="name" placeholder="Usuario" required/>
+	<input type="text" name="login" placeholder="Usuario" required/>
 
 
   <label id="icon" for="name"><i class="icon-shield"></i></label>
-  <input type="password" name="name" id="name" placeholder="Contraseña" required/>
+  <input type="password" name="clave"  placeholder="Contraseña" required/>
 
 	<label id="icon" for="name"><i class="icon-shield"></i></label>
-	<input type="password" name="name" id="name" placeholder="Confirmar contraseña" required/>
+	<input type="password" name="clave2"  placeholder="Confirmar contraseña" required/>
 
 
-   <a href="index.html" class="button" type= "submit">Registrar</a>
+   <a href="../index.html" class="button" type= "submit" name = 'submit' value = "Registrar">Registrar</a>
   </form>
 </div>
 
