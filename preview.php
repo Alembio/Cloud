@@ -34,20 +34,9 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-<<<<<<< HEAD:preview.html
-                    <a href="archivos.php">
-                        <img src="img/logo.png" width="200" height="80" class="logo" style="margin-top: 15mm;margin-bottom: 2cm;">
-                    </a>
-                </li>
-
-                <li>
-                  </br>
-                  </br></br>
-=======
                   <img src="img/logo.png" width="200" height="80" class="logo" style="margin-top: 15mm;margin-bottom: 2cm;">
                 </li>
                 <li style="margin-top: 25mm;">
->>>>>>> origin/master:preview.php
                     <a href="ayuda.html">Ayuda</a>
                 </li>
                 <li>
