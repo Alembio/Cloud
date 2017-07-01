@@ -167,7 +167,17 @@
 
               <tr>
               <td><a href="php/buscar.php?nombre=<?php echo $row['nombre']?>"><?php echo $row['nombre']?></a></td> <!--Imprime cada archivo existente en la base de datos-->
-              <td><a href="php/eliminar.php?id=<?php echo $row['idarchivos']?>">Borrar</td> <!--Guardar el id en un arreglo-->
+              <td><a href="php/eliminar.php?id=<?php echo $row['idarchivos']?>"><button type="button" style ="background-color: #f44336;
+    border: none;
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 7px;
+
+    cursor: pointer;
+    ">Borrar</button></td> <!--Guardar el id en un arreglo-->
               </tr>
 
           <?php endwhile;
