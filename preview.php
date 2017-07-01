@@ -108,6 +108,19 @@
     <div class="container">
 
         <!-- Portfolio Item Heading -->
+        <style>
+        .image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+
+p {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   width: 100%;
+}</style>
+
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Preview
@@ -127,8 +140,9 @@
         $document = file_get_contents($file);
 
          ?>
-        <div class="row">
-            <div class="col-md-8">
+        <div class = "image">
+          <img src = "img/blank.jpg" width="420px" height="558px">
+
                 <p><?php echo $document?></p>
             </div>
 
@@ -137,8 +151,10 @@
 							<a href="archivos.php"><button type="Button">Editar</button></a>
 
             </div>
+          </div>
 
         </div>
+
 
         <!-- /.row -->
 
@@ -153,7 +169,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Linces 2017</p>
+                    Copyright &copy; Linces 2017
                 </div>
             </div>
             <!-- /.row -->
